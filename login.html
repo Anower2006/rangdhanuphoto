@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগ ইন বা সাইন আপ করুন</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>লগইন করুন বা সাইন আপ করুন</h2>
+    <form id="loginForm">
+        <input type="email" placeholder="ইমেইল" required>
+        <input type="password" placeholder="পাসওয়ার্ড" required>
+        <button type="submit">লগইন</button>
+        <button type="button" onclick="signUp()">সাইন আপ</button>
+    </form>
+
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

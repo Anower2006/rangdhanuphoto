@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রংধনু ফটোগ্রাফি</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>রংধনু ফটোগ্রাফি</h1>
+        <p>গ্রাহক সংখ্যা: <span id="liveCustomerCount">লোড হচ্ছে...</span></p>
+    </header>
+    
+    <section id="services">
+        <h2>আমাদের সেবা সম্পর্কে জানুন</h2>
+        <p>আমরা আউটডোর ফটোশুট, বিয়ে, জন্মদিন, পূজার জন্য ফটোগ্রাফি সেবা প্রদান করি।</p>
+    </section>
+
+    <section id="gallery">
+        <h2>গ্যালারি</h2>
+        <div class="gallery-images">
+            <!-- এখানে Firebase থেকে ছবি লোড হবে -->
+        </div>
+    </section>
+
+    <button onclick="redirectToLogin()" class="booking-btn">বুকিং করতে লগ ইন করুন</button>
+    
+    <footer>
+        <p>তারিখ ও সময়: <span id="dateTime"></span></p>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

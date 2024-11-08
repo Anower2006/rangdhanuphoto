@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বুকিং পেজ | রংধনু ফটোগ্রাফি</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>বুকিং করুন</h2>
+        <form id="bookingForm">
+            <label for="name">নাম</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">ঠিকানা</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">ফোন নাম্বার</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="service">সেবা সিলেক্ট করুন</label>
+            <select id="service" name="service" required>
+                <option value="outdoor">আউটডোর ফটোশুট</option>
+                <option value="wedding">বিয়ে</option>
+                <option value="birthday">জন্মদিন</option>
+                <option value="festival">পূজা</option>
+            </select>
+
+            <button type="submit">বুকিং দিন</button>
+        </form>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // এখানে বুকিং ডেটা Firebase এ সেভ করার জন্য ফাংশন লিখতে হবে
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+
+            // Firebase এ ডেটা সেভ করতে নিচের ফাংশন ব্যবহার করুন
+            saveBookingData(name, address, phone, service);
+        });
+
+        function saveBookingData(name, address, phone, service) {
+            const db = firebase.firestore();
+            db.collection('bookings').add({
+                name: name,
+                address: address,
+                phone: phone,
+                service: service,
+                status: 'Pending' // ডিফল্ট অবস্থা পেন্ডিং
+            })
+            .then(() => {
+                alert('বুকিং সফল হয়েছে!');
+                document.getElementById('bookingForm').reset();
+            })
+            .catch((error) => {
+                console.error('Error adding booking: ', error);
+            });
+        }
+    </script>
+</body>
+</html>

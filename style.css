@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+section {
+    margin: 20px 0;
+}
+
+button.booking-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.booking-btn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 18px;
+}
